@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);
@@ -22,7 +23,7 @@ export default function Header({ onCategorySelect }) {
           <h2>React E-Commerce</h2>
         </div>
         <div className="navbar-links">
-          <a href="">Products</a>
+          <Link to="/">Products</Link>
 
           <div className="dropdown">
             <span onClick={toggleDropdown} style={{ cursor: "pointer" }}>
@@ -50,8 +51,9 @@ export default function Header({ onCategorySelect }) {
             )}
           </div>
 
-          <a href="">Contact Us</a>
-          <a href="">Cart</a>
+          <Link to="/contact">Contact Us</Link>
+          <Link to="/cart">Cart</Link>
+          <Link to="/admin">Admin</Link>  {/* Added Admin link */}
         </div>
       </nav>
     </header>
