@@ -1,13 +1,12 @@
+import { useEffect, useState } from "react";
 
-import React, { useEffect, useState } from "react";
-
-export default function Header() {
+export default function Header({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);
-  const [open, setOpen] = useState(false); // Add this!
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())  // call json()
+      .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching Categories", err));
   }, []);
@@ -25,21 +24,29 @@ export default function Header() {
         <div className="navbar-links">
           <a href="">Products</a>
 
-          {/* Use a single clickable span */}
           <div className="dropdown">
             <span onClick={toggleDropdown} style={{ cursor: "pointer" }}>
               Categories ⬇
             </span>
 
-            {/* Show only if open */}
             {open && (
-              <ul className="dropdown-menu">
+              <div className="dropdown-menu">
+                <button
+                  className="category-button"
+                  onClick={() => onCategorySelect("all")}
+                >
+                  All
+                </button>
                 {categories.map((cat) => (
-                  <li key={cat}>
-                    <a href={`/category/${cat}`}>{cat}</a>
-                  </li>
+                  <button
+                    key={cat}
+                    onClick={() => onCategorySelect(cat)}
+                    className="category-button"
+                  >
+                    {cat}
+                  </button>
                 ))}
-              </ul>
+              </div>
             )}
           </div>
 

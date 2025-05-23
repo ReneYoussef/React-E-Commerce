@@ -64,6 +64,18 @@ body{
   background-color: #f0f0f0;
 }
 
+.category-button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+.category-button:hover {
+  background-color: #f0f0f0;
+}
+
 
 /* product section css */
 
