@@ -5,7 +5,7 @@ export default function Products() {
   const [allProduct, setAllProduct] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/women's clothing")
+    fetch("https://fakestoreapi.com/products/")
       .then((res) => res.json())
       .then((data) => {
         setAllProduct(data);
