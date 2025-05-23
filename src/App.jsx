@@ -3,7 +3,7 @@ import Header from "./Components/Header"
 import Products from "./Components/Products/products"
 
 export default function App() {
- const [selectedCategory, setSelectedCategory] = useState("");
+ const [selectedCategory, setSelectedCategory] = useState("all");
 
   return (
     <>
