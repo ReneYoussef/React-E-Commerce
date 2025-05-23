@@ -1,6 +1,21 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+This project is my personal practice app to get hands-on experience with important React concepts. It helps me understand and apply:
+
+useState to manage changing data inside components, like product lists and UI states.
+
+useEffect to fetch data from real APIs and handle side effects properly.
+
+useRef to access DOM elements directly and keep track of values without causing extra renders.
+
+Lifting State Up so I can share state between components by moving it to their nearest common parent.
+
+I’m building this e-commerce app to practice fetching real data (products and categories), showing it dynamically, and creating interactive UI parts like dropdown menus and product grids.
+
+This project is a playground for me to try React hooks and patterns, understand component communication, and improve my ability to build clean, reusable components.
+
+
 
 Currently, two official plugins are available:
 
