@@ -1,0 +1,135 @@
+body{
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f0f0f0; /* Optional for clarity */
+}
+
+.navbar-title h2 {
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* spacing between links */
+  align-items: center; /* vertically center links and dropdown */
+}
+
+.navbar-links a,
+.dropdown > span {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Make dropdown container inline-flex to behave like a link */
+.dropdown {
+  position: relative; /* for absolute positioning of menu */
+  display: inline-flex;
+  align-items: center;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  background: white;
+  top: 140%;
+  left: -10%;
+  min-width: 160px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* product section css */
+
+/* Parent container */
+.product-parent {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.product-parent h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* Grid layout for products */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 4 per row on desktop */
+  gap: 24px;
+}
+
+/* Product Card */
+.product-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-container:hover {
+  transform: translateY(-4px);
+}
+
+.products img {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.product-title {
+  font-size: 18px;
+  margin: 12px 0 6px;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-price {
+  color: #28a745;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.product-rating {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+
