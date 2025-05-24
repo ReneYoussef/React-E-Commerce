@@ -25,7 +25,7 @@ export default function Products({ category }) {
 
   return (
     <div className="product-parent">
-      <h1>Products</h1>
+      <h1>All Products</h1>
       <div className="product-list">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />

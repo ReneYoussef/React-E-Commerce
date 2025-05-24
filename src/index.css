@@ -1,6 +1,6 @@
-body{
+body {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 .navbar {
   display: flex;
@@ -35,7 +35,6 @@ body{
   align-items: center;
 }
 
-
 .dropdown-menu {
   position: absolute;
   background: white;
@@ -60,10 +59,6 @@ body{
   display: block;
 }
 
-.dropdown-menu li:hover {
-  background-color: #f0f0f0;
-}
-
 .category-button {
   background-color: transparent;
   border: none;
@@ -72,10 +67,93 @@ body{
   text-align: left;
   width: 100%;
 }
-.category-button:hover {
-  background-color: #f0f0f0;
+
+/* Intro css */
+
+.intro-parent {
+    display: flex;
+  width: 100%;
+  gap: 2rem;
 }
 
+
+
+.intro-img {
+  width: 100%;
+  height: 92.5vh;
+  object-fit: cover;
+}
+
+.intro {
+  position: relative; /* add this */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 91.8vh;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.intro-info {
+  position: absolute;
+  top: 50%;
+  left: 2rem;          /* align left with some padding */
+  transform: translateY(-50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align content */
+  color: white; /* add contrast assuming image is dark */
+  max-width: 40%; /* optional: restrict width */
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7); /* better readability */
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.intro-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #111;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+  }
+
+  .intro-img,
+  .intro-info {
+    width: 100%;
+  }
+
+  .intro-info {
+    padding: 1.5rem;
+  }
+}
+
+/* //////////////////////////////////////////// */
 
 /* product section css */
 
@@ -94,7 +172,10 @@ body{
 /* Grid layout for products */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 4 per row on desktop */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* 4 per row on desktop */
   gap: 24px;
 }
 
@@ -148,8 +229,7 @@ body{
 /* admin css
  */
 
-
- .admin-container {
+.admin-container {
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;

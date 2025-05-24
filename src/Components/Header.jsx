@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header({ onCategorySelect }) {
   const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
@@ -16,6 +17,11 @@ export default function Header({ onCategorySelect }) {
     setOpen((prev) => !prev);
   }
 
+  function handleCategorySelect(cat) {
+    onCategorySelect(cat);
+    navigate("/Products/products");
+  }
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -23,7 +29,8 @@ export default function Header({ onCategorySelect }) {
           <h2>React E-Commerce</h2>
         </div>
         <div className="navbar-links">
-          <Link to="/">Products</Link>
+          <Link to="/">Home</Link>
+          <Link to="/Products/products">Products</Link>
 
           <div className="dropdown">
             <span onClick={toggleDropdown} style={{ cursor: "pointer" }}>
@@ -34,14 +41,14 @@ export default function Header({ onCategorySelect }) {
               <div className="dropdown-menu">
                 <button
                   className="category-button"
-                  onClick={() => onCategorySelect("all")}
+                  onClick={() => handleCategorySelect("all")}
                 >
                   All
                 </button>
                 {categories.map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => onCategorySelect(cat)}
+                    onClick={() => handleCategorySelect(cat)}
                     className="category-button"
                   >
                     {cat}
@@ -53,7 +60,7 @@ export default function Header({ onCategorySelect }) {
 
           <Link to="/contact">Contact Us</Link>
           <Link to="/cart">Cart</Link>
-          <Link to="/admin">Admin</Link>  {/* Added Admin link */}
+          <Link to="/admin">Admin</Link>
         </div>
       </nav>
     </header>
