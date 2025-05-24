@@ -2,25 +2,25 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Header({ onCategorySelect }) {
-  const [categories, setCategories] = useState([]);
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  // const [categories, setCategories] = useState([]);
+  // const [open, setOpen] = useState(false);
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data))
-      .catch((err) => console.error("Error fetching Categories", err));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products/categories")
+  //     .then((res) => res.json())
+  //     .then((data) => setCategories(data))
+  //     .catch((err) => console.error("Error fetching Categories", err));
+  // }, []);
 
-  function toggleDropdown() {
-    setOpen((prev) => !prev);
-  }
+  // function toggleDropdown() {
+  //   setOpen((prev) => !prev);
+  // }
 
-  function handleCategorySelect(cat) {
-    onCategorySelect(cat);
-    navigate("/Products/products");
-  }
+  // function handleCategorySelect(cat) {
+  //   onCategorySelect(cat);
+  //   navigate("/Products/products");
+  // }
 
   return (
     <header className="header">
@@ -32,7 +32,7 @@ export default function Header({ onCategorySelect }) {
           <Link to="/">Home</Link>
           <Link to="/Products/products">Products</Link>
 
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <span onClick={toggleDropdown} style={{ cursor: "pointer" }}>
               Categories ⬇
             </span>
@@ -56,7 +56,7 @@ export default function Header({ onCategorySelect }) {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
 
           <Link to="/contact">Contact Us</Link>
           <Link to="/cart">Cart</Link>

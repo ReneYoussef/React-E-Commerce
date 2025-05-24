@@ -11,11 +11,20 @@ export default function App() {
 
   return (
     <Router>
-      <Header onCategorySelect={setSelectedCategory} />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Intro />} />
-        <Route path="/Products/products" element={<Products category={selectedCategory} />} />
+        <Route
+          path="/Products/products"
+          element={
+            <Products
+              category={selectedCategory}
+              onCategorySelect={setSelectedCategory}
+            />
+          }
+        />
+
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>

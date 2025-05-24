@@ -20,53 +20,81 @@ body {
   align-items: center; /* vertically center links and dropdown */
 }
 
-.navbar-links a,
-.dropdown > span {
+.navbar-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   cursor: pointer;
 }
 
-/* Make dropdown container inline-flex to behave like a link */
+/* Container for the dropdown */
 .dropdown {
-  position: relative; /* for absolute positioning of menu */
+  position: relative;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
 }
 
+/* Toggle text */
+.dropdown > span {
+  padding: 10px 14px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown > span:hover {
+  background-color: #eaeaea;
+}
+
+/* Dropdown menu box */
 .dropdown-menu {
   position: absolute;
+  top: 120%;
+  left: 0;
   background: white;
-  top: 140%;
-  left: -10%;
-  min-width: 160px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  min-width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   z-index: 1000;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  padding: 0.5rem 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Remove default list style */
+.dropdown-menu ul,
 .dropdown-menu li {
-  padding: 8px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.dropdown-menu li a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-}
+.category-select{
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 20px;
+font-family: 'Courier New', Courier, monospace;
 
+}
+/* Dropdown buttons */
 .category-button {
-  background-color: transparent;
+  background: none;
   border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  text-align: left;
   width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+
+.category-button:hover {
+  background-color: #f2f2f2;
+}
+
 
 /* Intro css */
 
@@ -162,8 +190,14 @@ body {
   padding: 40px;
   background-color: #f9f9f9;
 }
+.Product-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.product-parent h1 {
+}
+
+.Product-nav h1 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 32px;
